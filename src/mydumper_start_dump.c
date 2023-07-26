@@ -304,7 +304,8 @@ MYSQL *create_main_connection() {
   set_global_back = g_string_new(NULL);
 //  detected_server = detect_server(conn);
   detect_server_version(conn);
-  detected_server = get_product(); 
+//  detected_server = get_product(); 
+  detected_server = SERVER_TYPE_MYSQL;
   GHashTable * set_session_hash = mydumper_initialize_hash_of_session_variables();
   GHashTable * set_global_hash = g_hash_table_new ( g_str_hash, g_str_equal );
   if (key_file != NULL ){
